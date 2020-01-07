@@ -1,0 +1,21 @@
+body
+{
+  background-color: #949494;
+}
+
+#banner
+{
+  width: 65%;
+  height: 100px;
+  padding: 20px;
+  margin: auto;
+  background-color: #04b5b8;
+}
+
+#heading
+{
+  font-size: 45px;
+  font-style: italic;
+  text-align: center;
+  color: #FFFFFF;
+}
