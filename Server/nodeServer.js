@@ -5,11 +5,14 @@ var url = require("url");
 var functions = require("./functions");
 var port = 9000;
 
-var server = http.createServer(function(request, response)  {
-  var args = url.parse(request.url, true).query;
-  response.end(functions.testResponse(args.convStarter));
-});
+app.use(express.static("resources"));
 
-server.listen(port, function()  {
-  console.log("Server listening on port " + port);
+app.get("/catagory/:userID", function(request, response)  {
+  functions.findCatagory(request.params.id).then(function(catagory) {
+    response.redirect(catagory.catagoryName + catagory.status)
+  })
+})
+
+app.listen(9000, function() {
+  console.log("Listening on 9000...");
 })
