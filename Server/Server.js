@@ -7,10 +7,15 @@ var port = 9000;
 
 app.use(express.static("Site"));
 
+app.get("/", function(req,res) {
+  res.status(200).sendfile("/", {root:"Site"});
+});
+
 //Finds all Categorys
-app.get("/index", function (req, res) {
-  res.send(functions.findCategorys());
-})
+app.get("/index", function(req, res) {
+  res.send("Text");
+  console.log("Txt");
+});
 
 app.listen(9000, function() {
   console.log("Listening on 9000...");
