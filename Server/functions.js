@@ -1,19 +1,16 @@
-var mongoose = requie("moongoose");
-mongoose.connect("mongodb+srv://TimeMangement:time@cluster-l4srv.mongodb.net/timeManagementDB?retryWrites=true&w=majority", {useNewUrlParser: true });
-var category = require("./catagory");
-var task = require("./task");
+var MongoClient = require('mongodb').MongoClient;
+var url = "mongodb+srv://TimeMangement:time@cluster-l4srv.mongodb.net/timeManagementDB?retryWrites=true&w=majority";
 
-function testResponse() {
-  if (convStarter == undefined) {
-    return "Sever test response.";
-  }
-  return "Successfully recieved conversation starter : " + convStarter;
+function findCatagorys() {
+  MongoClient.connect(url, {useNewUrlParser: true}, function(err, db) {
+  if (err) throw err;
+  var dbo = db.db("timeManagementDB");
+  dbo.collection("categorys").find({}).toArray(function(err, result) {
+    if (err) throw err;
+    console.log(result);
+    db.close();
+  });
+});
 }
 
-module.exports.testResponse = testResponse;
-
-function findCatagory(id) {
-  await schemas.catagory.find({"userId": id})
-}
-
-module.exports.findCatagory = findCatagory;
+module.exports.findCatagorys = findCatagorys;

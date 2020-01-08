@@ -9,4 +9,5 @@ app.use(express.static("Site"));
 
 app.listen(9000, function() {
   console.log("Listening on 9000...");
+  functions.findCatagorys();
 })
