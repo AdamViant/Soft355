@@ -1,4 +1,4 @@
-var mongoose = requie("moongoose");
+var mongoose = require("mongoose");
 mongoose.connect("mongodb+srv://TimeMangement:time@cluster-l4srv.mongodb.net/timeManagementDB?retryWrites=true&w=majority", {useNewUrlParser: true });
 var category = require("./catagory");
 var task = require("./task");
