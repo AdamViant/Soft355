@@ -24,18 +24,20 @@ function addTask(id, catID, name, eHours, tHours, status)  {
       if (err) throw err;
       console.log("1 document inserted");
       db.close();
+    });
+  });
 }
 module.exports.addTask = addTask;
 
-function findCatagorys() {
+function findCategorys() {
   MongoClient.connect(url, {useNewUrlParser: true}, function(err, db) {
   if (err) throw err;
   var dbo = db.db("timeManagementDB");
   dbo.collection("categorys").find({}).toArray(function(err, result) {
     if (err) throw err;
-    console.log(result);
+    return(result);
     db.close();
   });
 });
 }
-module.exports.findCatagorys = findCatagorys;
+module.exports.findCategorys = findCategorys;
