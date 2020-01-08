@@ -1,6 +1,6 @@
-var mongoose = require("mongoose");
+var mongoose = requie("moongoose");
 mongoose.connect("mongodb+srv://TimeMangement:time@cluster-l4srv.mongodb.net/timeManagementDB?retryWrites=true&w=majority", {useNewUrlParser: true });
-var category = require("./category");
+var category = require("./catagory");
 var task = require("./task");
 
 function testResponse() {
@@ -12,8 +12,8 @@ function testResponse() {
 
 module.exports.testResponse = testResponse;
 
-function findcategory(id) {
-  await schemas.category.find({"userId": id})
+function findCatagory(id) {
+  await schemas.catagory.find({"userId": id})
 }
 
-module.exports.findcategory = findcategory;
+module.exports.findCatagory = findCatagory;
