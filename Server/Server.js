@@ -2,6 +2,7 @@ var express = require("express");
 var app = express();
 var http = require("http");
 var url = require("url");
+var path = require("path");
 var functions = require("./functions");
 var port = 9000;
 
@@ -13,8 +14,8 @@ app.get("/", function(req,res) {
 
 //Finds all Categorys
 app.get("/index", function(req, res) {
-  res.send("Text");
-  console.log("Txt");
+  var data = functions.findCategorys();
+  res.send("?" + data);
 });
 
 app.listen(9000, function() {

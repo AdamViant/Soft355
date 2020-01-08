@@ -4,7 +4,8 @@
 <head>
   <title>Time Management System</title>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-route.js"></script>
   <script src="script.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css"></link>
 </head>
@@ -15,7 +16,12 @@
   </div>
 
   <div id=container>
-    
+    <div ng-app="myApp" ng-controller="myCtrl">
+
+    <p>Today's welcome message is:</p>
+    <h1>{{myWelcome}}</h1>
+
+    </div>
   </div>
 </body>
 </html>
