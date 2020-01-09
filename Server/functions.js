@@ -1,5 +1,4 @@
 var MongoClient = require('mongodb').MongoClient;
-var promise = require("promise")
 var url = "mongodb+srv://TimeMangement:time@cluster-l4srv.mongodb.net/timeManagementDB?retryWrites=true&w=majority";
 
 function addCategory(id, uid, name, status) {
@@ -31,14 +30,15 @@ function addTask(id, catID, name, eHours, tHours, status)  {
 module.exports.addTask = addTask;
 
 function findCategorys() {
-  MongoClient.connect(url, {useNewUrlParser: true}, function(err, db) {
-  if (err) throw err;
-  var dbo = db.db("timeManagementDB");
-  dbo.collection("categorys").find({}).toArray(function(err, result) {
+  MongoClient.connect(url, function(err, db) {
     if (err) throw err;
-    return(result);
-    db.close();
+    var dbo = db.db("timeManagementDB");
+    dbo.collection("categorys").find({}).toArray(function(err, result) {
+      if (err) throw err;
+      console.log(result);
+      return(result);
+      db.close();
+    });
   });
-});
 }
 module.exports.findCategorys = findCategorys;
