@@ -15,11 +15,13 @@
     <h1 id=heading>Time Management System</h1>
   </div>
 
+<br />
+<br />
+
   <div id=container>
     <div ng-app="myApp" ng-controller="myCtrl">
 
-    <p>Today's welcome message is:</p>
-    <h1>{{myWelcome}}</h1>
+    <h1 ng-repeat="Category in Array">{{Category.categoryName}}</h1>
 
     </div>
   </div>
