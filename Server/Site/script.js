@@ -12,8 +12,7 @@
 // });
 var app = angular.module('myApp', []);
 app.controller("myCtrl", function($scope, $http) {
-  $scope.myArray = [];
   $http.get("/index").then(function(response) {
-    $scope.myArray = response;
+    console.log(response);
   })
 })

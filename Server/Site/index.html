@@ -16,10 +16,11 @@
   </div>
 
   <div id=container>
-    <div ng-controller="myctrl">
-        <ul ng-repeat="obj in myArray">
-            <li>{{obj.id}}</li>
-        </ul>
+    <div ng-app="myApp" ng-controller="myCtrl">
+
+    <p>Today's welcome message is:</p>
+    <h1>{{myWelcome}}</h1>
+
     </div>
   </div>
 </body>
