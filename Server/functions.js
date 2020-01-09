@@ -35,8 +35,7 @@ function findCategorys() {
     var dbo = db.db("timeManagementDB");
     dbo.collection("categorys").find({}).toArray(function(err, result) {
       if (err) throw err;
-      console.log(result);
-      return(result);
+      callback(result);
       db.close();
     });
   });
