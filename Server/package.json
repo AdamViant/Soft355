@@ -19,6 +19,7 @@
     "mongodb": "^3.4.1",
     "mongoose": "^4.13.20",
     "node": "^13.5.0",
+    "promise": "^8.0.3",
     "socket.io": "^2.3.0"
   },
   "devDependencies": {

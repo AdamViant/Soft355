@@ -14,8 +14,7 @@ app.get("/", function(req,res) {
 
 //Finds all Categorys
 app.get("/index", function(req, res) {
-  var data = functions.findCategorys();
-  res.send("?" + data);
+  res.send(functions.findCategorys());
 });
 
 app.listen(9000, function() {

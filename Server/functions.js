@@ -1,4 +1,5 @@
 var MongoClient = require('mongodb').MongoClient;
+var promise = require("promise")
 var url = "mongodb+srv://TimeMangement:time@cluster-l4srv.mongodb.net/timeManagementDB?retryWrites=true&w=majority";
 
 function addCategory(id, uid, name, status) {
