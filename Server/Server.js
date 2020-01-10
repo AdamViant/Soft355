@@ -12,7 +12,12 @@ app.get("/", function(req,res) {
   res.status(200).sendfile("/", {root:"Site"});
 });
 
-//Finds all Categorys
+app.post("/catSelect", function(req, res) {
+  id = req.params;
+  console.log(id);
+});
+
+//Finds all active Categorys
 app.get("/index", function(req, res) {
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
@@ -20,12 +25,12 @@ app.get("/index", function(req, res) {
     dbo.collection("categorys").find({status: 0}).toArray(function(err, result) {
       if (err) throw err;
       res.send(result);
-      console.log(result);
       db.close();
     });
   });
 });
 
+//finds all inactive Categorys
 app.get("/archive", function(req, res) {
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
@@ -33,7 +38,6 @@ app.get("/archive", function(req, res) {
     dbo.collection("categorys").find({status: 1}).toArray(function(err, result) {
       if (err) throw err;
       res.send(result);
-      console.log(result);
       db.close();
     });
   });

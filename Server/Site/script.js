@@ -18,5 +18,5 @@ app.controller("archiveCtrl", function($scope, $http) {
 
 function categoryClick(id)
 {
-  console.log(id);
-}
+  this.http.post("/catSelect", id);
+};
