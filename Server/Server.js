@@ -17,7 +17,20 @@ app.get("/index", function(req, res) {
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var dbo = db.db("timeManagementDB");
-    dbo.collection("categorys").find({}).toArray(function(err, result) {
+    dbo.collection("categorys").find({status: 0}).toArray(function(err, result) {
+      if (err) throw err;
+      res.send(result);
+      console.log(result);
+      db.close();
+    });
+  });
+});
+
+app.get("/archive", function(req, res) {
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("timeManagementDB");
+    dbo.collection("categorys").find({status: 1}).toArray(function(err, result) {
       if (err) throw err;
       res.send(result);
       console.log(result);

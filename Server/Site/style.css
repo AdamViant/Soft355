@@ -17,6 +17,7 @@ body
   font-size: 45px;
   font-style: italic;
   text-align: center;
+  font-family: cursive;
   color: #FFFFFF;
 }
 
@@ -26,4 +27,34 @@ body
   padding: 15px;
   margin: auto;
   background-color: #929292;
+}
+
+#hotbar
+{
+  border-bottom: solid;
+  text-align: center;
+  padding: 5px;
+}
+
+.categorys
+{
+  padding: 20px;
+  background-color: #818181;
+  height: 100px;
+  margin-Top: 20px;
+}
+
+.categorys:hover{
+  background-color: #006c87;
+}
+
+.catName
+{
+  font-family: serif;
+  font-style: oblique;
+}
+
+.class
+{
+  text-align: right;
 }

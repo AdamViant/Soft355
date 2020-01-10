@@ -20,14 +20,14 @@
 
   <div id=container>
 
-    <div id=hotbar><a href="archive.html">Archive</a></div>
+    <div id=hotbar><a href="index.html">Live Tasks</a></div> 
 
-    <div ng-app="indexCat" ng-controller="indexCtrl">
+    <div ng-app="archiveCat" ng-controller="archiveCtrl">
 
-    <div id={{Category.id}} class=categorys ng-repeat="Category in Array" onclick="categoryClick(this.id)">
-    <h1 class=catName >{{Category.categoryName}}</h1>
+    <div class=categorys ng-repeat="Category in Array">
+    <h1 class=catName>{{Category.categoryName}}</h1>
 
-    <p class=status>Incomplete</p>
+    <p class=status>Complete</p>
     </div>
 
     </div>
